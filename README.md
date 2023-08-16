@@ -1,1 +1,1 @@
-# Xpen- An Expense Tracker Appd
+# Xpen- An Expense Tracker App
