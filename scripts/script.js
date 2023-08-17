@@ -1,30 +1,41 @@
-// Define an array to store the transactions
-let transactions = [];
+const expenseForm = document.getElementById('expense-form');
 
-// Function to add a new transaction
-function addTransaction(description, amount) {
-    const transaction = {
-        description,
-        amount: +amount, // Convert amount to a number
-        timestamp: new Date().toISOString()
-    };
-    transactions.push(transaction);
+expenseForm.addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  const amountInput = document.getElementById('amount');
+  const descriptionInput = document.getElementById('description');
+  const dateInput = document.getElementById('date');
+
+  // Validate user input
+  if (amountInput.value === '' || isNaN(amountInput.value) || amountInput.value <= 0) {
+    alert('Please enter a valid amount.');
+    return;
+  }
+
+  // Validate other input fields...
+
+  // If validation passes, proceed to add expense
+  addExpense({
+    amount: parseFloat(amountInput.value),
+    description: descriptionInput.value,
+    date: dateInput.value,
+    category: categoryInput.value
+  });
+
+  // Clear form inputs
+  expenseForm.reset();
+});
+
+const expenseList = document.getElementById('expense-list');
+
+function addExpense(expense) {
+  // Create a new expense item
+  const expenseItem = document.createElement('li');
+  expenseItem.innerHTML = `
+    <strong>${expense.amount}</strong> - ${expense.description} (${expense.date}) - ${expense.category}
+  `;
+
+  // Add the expense item to the list
+  expenseList.appendChild(expenseItem);
 }
-
-// Function to display transactions in the UI
-function displayTransactions() {
-    const transactionList = document.createElement('ul');
-    transactions.forEach(transaction => {
-        const listItem = document.createElement('li');
-        listItem.textContent = `${transaction.description}: ${transaction.amount}`;
-        transactionList.appendChild(listItem);
-    });
-
-    const container = document.querySelector('.container');
-    container.appendChild(transactionList);
-}
-
-// Example usage:
-addTransaction("Salary", 3000);
-addTransaction("Rent", -1000);
-displayTransactions();

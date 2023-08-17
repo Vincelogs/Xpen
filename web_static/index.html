@@ -4,14 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Xpen</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
     <h1>Xpen</h1>
     <div class="container">
         <!-- Add input fields and buttons here for adding transactions -->
         <!-- Use table or list to display the list of transactions -->
+        <form id="expense-form">
+            <label for="amount">Amount:</label>
+            <input type="number" id="amount" name="amount" required>
+            
+            <label for="description">Description:</label>
+            <input type="text" id="description" name="description" required>
+            
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required>
+            
+            <label for="category">Category:</label>
+            <select id="category" name="category" required>
+              <option value="groceries">Groceries</option>
+              <option value="entertainment">Entertainment</option>
+              <option value="transportation">Transportation</option>
+              <!-- Add more options -->
+            </select>
+            
+            <button type="submit">Add Expense</button>
+          </form>
+          
     </div>
+
+
+
+
+
+
+
     <script src="script.js"></script>
 </body>
 </html>
