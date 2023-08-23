@@ -27,7 +27,27 @@
                 <!-- Content for Expenses view -->
                 <h2>Expenses</h2>
                 <div class="expense-form">
-                    <!-- Expense form elements -->
+                    <form id="expense-form">
+                        <label for="amount">Amount:</label>
+                        <input type="number" id="amount" name="amount" required>
+                        
+                        <label for="description">Description:</label>
+                        <input type="text" id="description" name="description" required>
+                        
+                        <label for="date">Date:</label>
+                        <input type="date" id="date" name="date" required>
+                        
+                        <label for="category">Category:</label>
+                        <select id="category" name="category" required>
+                          <option value="groceries">Groceries</option>
+                          <option value="entertainment">Entertainment</option>
+                          <option value="transportation">Transportation</option>
+                          <!-- Add more options -->
+                        </select>
+                        
+                        <button type="submit">Add Expense</button>
+                      </form>
+                      
                 </div>
             </div>
             <div class="view-content" id="profile">
