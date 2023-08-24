@@ -1,4 +1,4 @@
-export function showProfile() {
+export function showIncome() {
   const dashboard = document.getElementById('dashboard');
   const expenses = document.getElementById('expenses');
   const income = document.getElementById('income');
@@ -6,6 +6,6 @@ export function showProfile() {
 
   dashboard.style.display = 'none';
   expenses.style.display = 'none';
-  income.style.display = 'none';
-  profile.style.display = 'block';
+  income.style.display = 'block';
+  profile.style.display = 'none';
 }
