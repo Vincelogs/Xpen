@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    <header>Xpen</header>
     <div class="container">
         <nav class="navigation">
             <ul class="navigation-list">
@@ -26,16 +27,51 @@
             </div>
             <div class="view-content" id="expenses">
                 <!-- Content for Expenses view -->
-                <h2>Expenses</h2>
+                <h1>Expenses</h1>
                 <div class="expense-form">
-                    <!-- Expense form elements -->
+                    <form id="expense-form">
+			<h2>Add Expense</h2>
+                        <label for="amount">Amount:</label>
+                        <input type="number" id="amount" name="amount" required>
+                        
+                        <label for="description">Description:</label>
+                        <input type="text" id="description" name="description" required>
+                        
+                        <label for="date">Date:</label>
+                        <input type="date" id="date" name="date" required>
+                        
+                        <label for="category">Category:</label>
+                        <select id="category" name="category" required>
+                          <option value="groceries">Groceries</option>
+                          <option value="entertainment">Entertainment</option>
+                          <option value="transportation">Transportation</option>
+                          <!-- Add more options -->
+                        </select>
+                        
+                        <button type="submit">Add Expense</button>
+                      </form>
+                      
                 </div>
             </div>
             <div class="view-content" id="income">
                 <!-- Content for Income view -->
-                <h2>Income</h2>
+                <h1>Income</h1>
+                <div class="income-form">
+                    <form id="income-form">
+			<h2>Add Income</h2>
+                        <label for="salary-amount">Salary Amount:</label>
+                        <input type="number" id="salary-amount" name="salary-amount">
+                        
+                        <label for="other-income">Other Income:</label>
+                        <input type="text" id="other-income" name="other-income">
+                        
+                        <label for="other-income-amount">Other Income Amount:</label>
+                        <input type="number" id="other-income-amount" name="other-income-amount">
+                        <button type="submit">Add Income</button>
+                      </form>
+                </div>
             </div>
-            <div class="view-content" id="profile">
+	    <div class="view-content" id="profile">
                 <!-- Content for Profile view -->
                 <h2>User Profile</h2>
                 <div class="profile-details">
