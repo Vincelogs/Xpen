@@ -11,3 +11,16 @@ document.getElementById('profile-link').addEventListener('click', showProfile);
 
 // Initialize app by showing the dashboard
 showDashboard();
+
+const navLinks = document.querySelectorAll(".navigation-list a");
+navLinks.forEach (function(link) {
+  link.addEventListener('click', function(event) {
+    navLinks.forEach (function(link) {
+      link.classList.remove("active");
+    });
+    event.target.classList.add("active");
+    console.log(event.target);
+    event.preventDefault();
+  }); 
+});
+
