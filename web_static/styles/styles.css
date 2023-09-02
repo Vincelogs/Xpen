@@ -1,11 +1,24 @@
+/* styles for the header */
 header {
     background-color: #2C3333;
     font-weight: bold;
     color: #FFFFFF; 
     font-size: 30px;
     padding-left: 20px;
-    position: sticky;
+    position: fixed;
     top: 0;
+    z-index: 1;
+}
+
+/* styles for the footer */
+footer {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    bottom:0;
+    text-align: center;
+    font-size: 12px;
+    padding: 10px;
 }
 
 /* Style for the container */
@@ -19,6 +32,8 @@ header {
     padding: 20px;
     background-color: #2C3333;
     height: 520px;
+    position: sticky;
+    top:0;
 }
 
 /* Style for the content column*/ 
@@ -58,6 +73,7 @@ header {
     border-radius:50px 20px;
 }
 
+/* styles for the body */
 body {
      font-family: Arial, sans-serif;
      margin: 0;
@@ -65,6 +81,7 @@ body {
      background-color: #D9E2E0;
 }
 
+/* styles for the forms */
 form {
     max-width: 400px;
     margin: 0 auto;
@@ -87,6 +104,7 @@ label, input, select, .button {
     box-sizing: border-box;
 }
 
+/* styles for the buttons */
 .button, .content-right button {
     background-color: #2C3333;
     color: #FFFFFF;
@@ -100,6 +118,7 @@ button:hover {
     background-color: #2E4F4F;
 }
 
+/* styles for the headers */
 h1 {
     font-size: 25px;
     text-align: center;
@@ -110,6 +129,7 @@ h2 {
     font-size: 15px;
 }
 
+/* styles for the expenses and income list */
 .expense-list h2, .income-list h2 {
     text-align: center;
 }
