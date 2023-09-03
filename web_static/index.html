@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/styles.css">
     <link rel="stylesheet" href="./styles/dashboard.css">
+    <link rel="stylesheet" href="./styles/profile.css">
     <title>Xpen - Expense Tracker</title>
 </head>
 
@@ -116,12 +117,35 @@
 		    </ul>
 		</div>
             </div>
-	    <div class="view-content" id="profile">
+	    <div class="profile_container" id="profile">
                 <!-- Content for Profile view -->
                 <h1>User Profile</h1>
-                <div class="profile-details">
-                    <!-- User profile details -->
+                <div class="profile">
+                    <img src="./image/profile_pic.jpg" alt="Profile Picture">
+                    <div class="profile-details">
+                        <h2>John Doe</h2>
+                        <p>Email: john@example.com</p>
+                        <p>Username: johndoe123</p>
+                        <p>Location: New York, USA</p>
+                        <a href="#" class="btn">Edit Profile</a>
+                    </div>
                 </div>
+        
+                <h2 class="section-title">Expense History</h2>
+                <ul class="p_expenses-list">
+                    <li class="p_expenses-list-item">
+                        <span>Expense 1</span>
+                        <span class="p_amount">-$50.00</span>
+                    </li>
+                    <li class="p_expenses-list-item">
+                        <span>Expense 2</span>
+                        <span class="p_amount">-$30.00</span>
+                    </li>
+                    <li class="p_expenses-list-item">
+                        <span>Expense 3</span>
+                        <span class="p_amount">-$20.00</span>
+                    </li>
+                </ul>
                 <div class="change-password-form">
                     <!-- Change password form elements -->
                 </div>
