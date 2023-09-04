@@ -34,21 +34,15 @@
     padding: 20px;
 
 }
-.dash_sub_container a {
+.dash_sub_container h2 {
     text-decoration: none;
     font-weight: 700;
     font-size: larger;
-    color: #2E4F4F;
-    border:  2px solid #2E4F4F;
+    color: #2E4F4F; 
     align-self: center;
     padding: 0 3px;
     border-radius: 10px;
     transition: 1s;
-}
-.dash_sub_container a:hover {
-    color: white;
-    background-color: #2E4F4F;
-    border: none;
 }
 
 .dash_chart {
