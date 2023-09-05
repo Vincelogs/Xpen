@@ -23,4 +23,3 @@ navLinks.forEach (function(link) {
     event.preventDefault();
   }); 
 });
-

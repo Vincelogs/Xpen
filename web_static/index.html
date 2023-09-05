@@ -29,7 +29,7 @@
                     <h1>Total Balance: $<span id="totalBalance">0</span></h1>
                  </div>
                  <div class="dash_balance">
-                    <h2>Total Expense: $<span id="totalBalance">0</span></h2>
+                    <h2>Total Expenses: $<span id="totalExpenses">0</span></h2>
                  </div>
                  <div class="dash_container">
                      <div class="dash_sub_container">
@@ -42,7 +42,7 @@
                      </div>
                  </div>
                 </div>
-            <div class="view-content" id="expenses">
+            <div class="view-expenses" id="expenses">
                 <!-- Content for Expenses view -->
                 <h1>Expenses</h1>
                 <div class="expense-form">
@@ -65,15 +65,18 @@
                           <!-- Add more options -->
                         </select>
                         
-                        <button type="submit" class="button">Add Expense</button>
+                        <button type="button" class="button" id="addExpense" >Add Expense</button>
                       </form>
                       
                 </div>
 		<div class="expense-list">
 		    <h2>Expense List:</h2>
-		    <ul>
+		    <ul id="expense-transactions">
 		        <li class="expense-transactions">
-			    <p>Expense 1</p>
+			    <p>Groceries</p>
+			    <div>
+			        <p>Expense 1</p>
+			    </div>
 			    <div>
 			        <p>08/31/2023</p>
 			    </div>
@@ -86,7 +89,7 @@
 		    </ul>
 		</div>
             </div>
-            <div class="view-content" id="income">
+            <div class="view-income" id="income">
                 <!-- Content for Income view -->
                 <h1>Income</h1>
                 <div class="income-form">
@@ -100,12 +103,12 @@
                         
                         <label for="other-income-amount">Other Income Amount:</label>
                         <input type="number" id="other-income-amount" name="other-income-amount" placeholder="eg: 500">
-                        <button type="submit" class="button">Add Income</button>
+                        <button type="button" class="button" id="addIncome" >Add Income</button>
                       </form>
                 </div>
 		<div class="income-list">
 		    <h2>Income List:</h2>
-		    <ul>
+		    <ul id="income-transactions">
                         <li class="income-transactions">
 			    <p>Salary</p>
 			    <div class="content-right">

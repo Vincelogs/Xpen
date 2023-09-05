@@ -127,6 +127,8 @@ h1 {
 
 h2 {
     font-size: 15px;
+    color: #2C3333;
+    font-weight: bold;
 }
 
 /* styles for the expenses and income list */
@@ -135,12 +137,19 @@ h2 {
 }
 
 .expense-transactions, .income-transactions {
-    max-width: 600px;
     margin: 5px auto;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 50px 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.expense-transactions {
+    max-width: 800px;
+}
+
+.income-transactions {
+    max-width: 600px;
 }
 
 ul {
@@ -154,6 +163,7 @@ ul {
     padding: 10px;
     color: #2C3333;
     font-weight: bold;
+    word-wrap: break-word;
 }
 
 .content-right {
