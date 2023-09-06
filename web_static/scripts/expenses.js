@@ -47,6 +47,7 @@ export function showExpenses () {
         `;
       });
     }
+    // save expense data after displaying
     saveExpenses();
   }
 
@@ -113,6 +114,8 @@ export function showExpenses () {
     nameInput.value = '';
     dateInput.value = '';
     categoryInput.value = '';
+
+    // Hide the cancelEdit button
     cancelEdit.style.display = 'none';
   });
 
@@ -120,10 +123,24 @@ export function showExpenses () {
   addExpense.addEventListener('click', (event) => {
     event.preventDefault();
 
-    if (amountInput.value <= 0 || nameInput.value === '' || dateInput.value === '') {
+    // Get input values
+    const amountValue = Number(amountInput.value);
+    const nameValue = nameInput.value.trim(); // Remove leading/trailing spaces
+    const dateValue = dateInput.value.trim(); // Remove leading/trailing spaces
+    const categoryValue = categoryInput.value.trim(); // Remove leading/trailing spaces
+
+    // Check if any input is empty or amount is not a positive number
+    if (
+      amountValue <= 0 ||
+      nameValue === '' ||
+      dateValue === '' ||
+      categoryValue === ''
+    ) {
       alert('Please enter valid values.');
       return;
     }
+
+    // Create an expense object
     const expense = {
       amount: Number(amountInput.value),
       name: nameInput.value,
@@ -131,23 +148,29 @@ export function showExpenses () {
       category: categoryInput.value
     };
 
+    // If editIndex is -1, it means we are adding a new expense
     if (editIndex === -1) {
       listExpenses.push(expense);
     } else {
+      // If editIndex is not -1, we are editing an existing expense
       listExpenses[editIndex] = expense;
     }
 
+    // Reset editIndex
     editIndex = -1;
     console.log(expense);
 
+    // Update the expense list
     displayExpenses(listExpenses);
 
+    // Hide the cancelEdit button
     cancelEdit.style.display = 'none';
 
-    // Clear input fields after adding an expense
+    // Clear input fields after adding/editing an expense
     clearInputs();
   });
 
+  // load existing expenses
   getExpenses();
 
   // Initial display of expenses
