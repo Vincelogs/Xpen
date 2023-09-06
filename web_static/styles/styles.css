@@ -105,7 +105,7 @@ label, input, select, .button {
 }
 
 /* styles for the buttons */
-.button, .content-right button {
+.button, .content-right button, #cancelEdit {
     background-color: #2C3333;
     color: #FFFFFF;
     cursor: pointer;
@@ -115,6 +115,15 @@ label, input, select, .button {
 }
 
 button:hover {
+    background-color: #2E4F4F;
+}
+
+#cancelEdit {
+    width: 100%;
+    display: none;
+}
+
+#cancelEdit:hover {
     background-color: #2E4F4F;
 }
 
