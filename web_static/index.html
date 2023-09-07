@@ -59,9 +59,21 @@
                         
                         <label for="category">Category:</label>
                         <select id="category" name="category" required>
-                          <option value="groceries">Groceries</option>
+                          <option value="--">--</option>
+                          <option value="food and dining">Food and Dining</option>
                           <option value="entertainment">Entertainment</option>
                           <option value="transportation">Transportation</option>
+                          <option value="housing">Housing</option>
+                          <option value="health and wellness">Health and Wellness</option>
+                          <option value="education">Education</option>
+                          <option value="travel">Travel</option>
+                          <option value="shopping">Shopping</option>
+                          <option value="debt and loans">Debt and Loans</option>
+                          <option value="savings and investments">Savings and Investments</option>
+                          <option value="utilities">Utilities</option>
+                          <option value="charity and donations">Charity and Donations</option>
+                          <option value="taxes">Taxes</option>
+                          <option value="miscellaneous">Miscellaneous</option>
                           <!-- Add more options -->
                         </select>
                         
@@ -97,10 +109,10 @@
                     <form id="income-form">
 			<h2>Add Income</h2>
                         <label for="incometype">Salary/Other Income:</label>
-                        <input type="text" id="incometype" name="incometype" placeholder="eg: Gift/Salary">
+                        <input type="text" id="incometype" name="incometype" placeholder="eg: Gift/Salary" required>
                         
                         <label for="income-amount">Amount:</label>
-                        <input type="number" id="income-amount" name="income-amount" placeholder="eg: 500">
+                        <input type="number" id="income-amount" name="income-amount" placeholder="eg: 500" required>
                         
                         <button type="button" class="button" id="addIncome" >Add Income</button>
                         <button type="button" id="cancel" >Cancel Edit</button>
