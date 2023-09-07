@@ -15,11 +15,16 @@ export function showIncome () {
   const nameInput = document.getElementById('incometype');
   const cancel = document.getElementById('cancel');
   let listIncome = [];
+  let totalIncome = 0;
   const symbol = '$';
   let editIdx = -1;
 
   // Function to display income
   function displayIncome (listIncome) {
+    totalIncome = listIncome.reduce((totalIncome, currentIncome) => {
+      return totalIncome + currentIncome.amount;
+    }, 0);
+
     // Clear existing content
     incomeList.innerHTML = '';
 
@@ -46,6 +51,10 @@ export function showIncome () {
   // Function to edit an income
   function editIncome (dataIdx) {
     editIdx = dataIdx;
+    if (listIncome.length === 0 || dataIdx < 0 || dataIdx >= listIncome.length) {
+      console.log('No income to edit');
+      return;
+    }
     console.log(`Attempting to edit income at index ${dataIdx}`);
 
     // populate form fields with income data
@@ -71,6 +80,7 @@ export function showIncome () {
 
   // function to store the income data
   function saveIncome () {
+    localStorage.setItem('totalIncome', totalIncome);
     localStorage.setItem('incomelist', JSON.stringify(listIncome));
   }
 
@@ -111,7 +121,7 @@ export function showIncome () {
 
     // Get input values
     const nameValue = nameInput.value.trim(); // Remove leading/trailing spaces
-    const amountValue = Number(amountInput.value);
+    const amountValue = parseFloat(amountInput.value);
 
     // Check if any input is empty or amount is not a positive number
     if (amountValue <= 0 || nameValue === '') {
@@ -122,7 +132,7 @@ export function showIncome () {
     // Create an income object
     const income = {
       name: nameValue,
-      amount: amountValue
+      amount: amountValue.toFixed(2)
     };
 
     // If editIndex is -1, it means we are adding a new income

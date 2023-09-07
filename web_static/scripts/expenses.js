@@ -17,11 +17,16 @@ export function showExpenses () {
   const categoryInput = document.getElementById('category');
   const cancelEdit = document.getElementById('cancelEdit');
   let listExpenses = [];
+  let totalExpenses = 0;
   const symbol = '$';
   let editIndex = -1;
 
   // Function to display expenses
   function displayExpenses (listExpenses) {
+    totalExpenses = listExpenses.reduce((total, currentExpense) => {
+      return total + currentExpense.amount;
+    }, 0);
+
     // Clear existing content
     expenseList.innerHTML = '';
 
@@ -54,6 +59,10 @@ export function showExpenses () {
   // Function to edit an expense
   function editExpense (dataIndex) {
     editIndex = dataIndex;
+    if (listExpenses.length === 0 || dataIndex < 0 || dataIndex >= listExpenses.length) {
+      console.log('No expenses to edit');
+      return;
+    }
     console.log(`Attempting to edit expense at index ${dataIndex}`);
 
     // populate form fields with expense data
@@ -83,6 +92,7 @@ export function showExpenses () {
 
   // function to store the Expense data
   function saveExpenses () {
+    localStorage.setItem('totalExpenses', totalExpenses);
     localStorage.setItem('expenselist', JSON.stringify(listExpenses));
   }
 
@@ -124,7 +134,7 @@ export function showExpenses () {
     event.preventDefault();
 
     // Get input values
-    const amountValue = Number(amountInput.value);
+    const amountValue = parseFloat(amountInput.value);
     const nameValue = nameInput.value.trim(); // Remove leading/trailing spaces
     const dateValue = dateInput.value.trim(); // Remove leading/trailing spaces
     const categoryValue = categoryInput.value.trim(); // Remove leading/trailing spaces
@@ -142,7 +152,7 @@ export function showExpenses () {
 
     // Create an expense object
     const expense = {
-      amount: amountValue,
+      amount: amountValue.toFixed(2),
       name: nameValue,
       date: dateValue,
       category: categoryValue
