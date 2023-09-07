@@ -142,10 +142,10 @@ export function showExpenses () {
 
     // Create an expense object
     const expense = {
-      amount: Number(amountInput.value),
-      name: nameInput.value,
-      date: dateInput.value,
-      category: categoryInput.value
+      amount: amountValue,
+      name: nameValue,
+      date: dateValue,
+      category: categoryValue
     };
 
     // If editIndex is -1, it means we are adding a new expense
@@ -158,6 +158,7 @@ export function showExpenses () {
 
     // Reset editIndex
     editIndex = -1;
+
     console.log(expense);
 
     // Update the expense list

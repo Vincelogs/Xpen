@@ -121,8 +121,8 @@ export function showIncome () {
 
     // Create an income object
     const income = {
-      name: nameInput.value,
-      amount: Number(amountInput.value)
+      name: nameValue,
+      amount: amountValue
     };
 
     // If editIndex is -1, it means we are adding a new income
@@ -135,6 +135,7 @@ export function showIncome () {
 
     // Reset editIndex
     editIdx = -1;
+
     console.log(income);
 
     // Update the income list
