@@ -23,6 +23,7 @@ export function showDashboard() {
   // load existing totals
   getTotals();
 
-  expenseTotal.innerHTML = totalExpenses.toFixed(2); // Display to 2 decimal places
-  balance.innerHTML = (totalIncome - totalExpenses).toFixed(2); // Display to 2 decimal places;
+  // Convert the totals to a formatted string with commas
+  expenseTotal.innerHTML = totalExpenses.toLocaleString();
+  balance.innerHTML = (totalIncome - totalExpenses).toLocaleString();
 }

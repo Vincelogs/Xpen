@@ -44,7 +44,7 @@ export function showExpenses () {
                   <p>${e.date}</p>
               </div>
               <div class="content-right">
-                  <p>${symbol}${e.amount}</p>
+                  <p>${symbol}${e.amount.toLocaleString()}</p>
                   <button data-id="${index}">Edit</button>
                   <button data-id="${index}">Delete</button>
               </div>
@@ -146,7 +146,7 @@ export function showExpenses () {
       dateValue === '' ||
       categoryValue === ''
     ) {
-      alert('Please enter valid values.');
+      //alert('Please enter valid values.');
       return;
     }
 

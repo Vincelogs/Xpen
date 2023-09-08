@@ -36,7 +36,7 @@ export function showIncome () {
           <li class="income-transactions">
               <p>${i.name}</p>
               <div class="content-right">
-                  <p>${symbol}${i.amount}</p>
+                  <p>${symbol}${i.amount.toLocaleString()}</p>
                   <button data-id="${index}">Edit</button>
                   <button data-id="${index}">Delete</button>
               </div>
@@ -125,7 +125,7 @@ export function showIncome () {
 
     // Check if any input is empty or amount is not a positive number
     if (amountValue <= 0 || nameValue === '') {
-      alert('Please enter valid values.');
+      //alert('Please enter valid values.');
       return;
     }
 
