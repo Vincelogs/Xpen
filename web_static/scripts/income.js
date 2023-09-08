@@ -121,7 +121,7 @@ export function showIncome () {
 
     // Get input values
     const nameValue = nameInput.value.trim(); // Remove leading/trailing spaces
-    const amountValue = parseFloat(amountInput.value);
+    const amountValue = Number(amountInput.value);
 
     // Check if any input is empty or amount is not a positive number
     if (amountValue <= 0 || nameValue === '') {
@@ -132,7 +132,7 @@ export function showIncome () {
     // Create an income object
     const income = {
       name: nameValue,
-      amount: amountValue.toFixed(2)
+      amount: amountValue
     };
 
     // If editIndex is -1, it means we are adding a new income
