@@ -134,12 +134,12 @@ export function showExpenses () {
     event.preventDefault();
 
     // Get input values
-    const amountValue = parseFloat(amountInput.value);
+    const amountValue = Number(amountInput.value);
     const nameValue = nameInput.value.trim(); // Remove leading/trailing spaces
     const dateValue = dateInput.value.trim(); // Remove leading/trailing spaces
     const categoryValue = categoryInput.value.trim(); // Remove leading/trailing spaces
 
-    // Check if any input is empty or amount is not a positive number
+    //Check if any input is empty or amount is not a positive number
     if (
       amountValue <= 0 ||
       nameValue === '' ||
@@ -152,7 +152,7 @@ export function showExpenses () {
 
     // Create an expense object
     const expense = {
-      amount: amountValue.toFixed(2),
+      amount: amountValue,
       name: nameValue,
       date: dateValue,
       category: categoryValue
