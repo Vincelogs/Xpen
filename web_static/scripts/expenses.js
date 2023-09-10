@@ -144,7 +144,7 @@ export function showExpenses () {
       amountValue <= 0 ||
       nameValue === '' ||
       dateValue === '' ||
-      categoryValue === ''
+      categoryValue === '--'
     ) {
       //alert('Please enter valid values.');
       return;

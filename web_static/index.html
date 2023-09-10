@@ -33,13 +33,17 @@
                  </div>
                  <div class="dash_container">
                      <div class="dash_sub_container">
-                        <h2>Expenses</h2>
-                         <div class="dash_chart"></div>
+                        <h2>Expenses Per Category</h2>
+                         <div class="dash_chart">
+			   <canvas id="expensesPieChart"></canvas>
+			 </div>
                      </div>
+		     <!--
                      <div class="dash_sub_container">
                         <h2>Incomes</h2>
                          <div class="dash_chart"></div>
                      </div>
+		     -->
                  </div>
                 </div>
             <div class="view-expenses" id="expenses">
@@ -197,6 +201,7 @@
     <script type="module" src="./scripts/income.js"></script>
     <script type="module" src="./scripts/profile.js"></script>
     <script type="module" src="./scripts/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
 
 </html>

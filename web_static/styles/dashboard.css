@@ -19,7 +19,6 @@
     display: flex;
     padding-left: 20px;
     width: 60rem;
-    height: 28rem;
 }
 
 .dash_sub_container {
@@ -46,9 +45,8 @@
 }
 
 .dash_chart {
-    background-color: white;
-    height: 300px;
-    width: 300px;
+    height: 400px;
+    width: 400px;
     border-radius: 50%;
 }
 
