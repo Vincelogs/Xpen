@@ -1,5 +1,7 @@
 # Xpen- An Expense Tracker App
 
+![App Screenshot](./screenshot.png)
+
 
 ## Introduction
 
